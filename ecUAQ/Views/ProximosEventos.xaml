@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.ProximosEventos">
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ListView
+                    x:Name="ListaEventos" ItemSelected="detalle_ItemSelected" ItemsSource="{Binding ListaEventos}" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding titulo}" Detail="{Binding descripcion}" ImageSource="{Binding url_portada}"></ImageCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+       </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

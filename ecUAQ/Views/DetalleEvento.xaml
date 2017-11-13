@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.DetalleEvento">
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <ListView
+                    x:Name="DetalleDelEvento" ItemsSource="{Binding DetalleDelEvento}" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            
+                            <ImageCell Text="{Binding titulo}" Detail="{Binding descripcion}" ImageSource="{Binding url_portada}"></ImageCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+       </ScrollView>
+        <!--<ScrollView>
+            <StackLayout Padding="12">
+                <Label Text="TORNEO DE PITARRA" FontSize="14"></Label>
+                <Image Source="http://www.uaq.mx/proyectocultura/images_cartelera_general/pitarraf.jpg"/>
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="TORNEO DE PITARRA" FontAttributes="Bold" FontSize="22" />
+                                <Span Text="" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="EN LA SEMANA DE IDENTIDAD DE LA F.C.A." />
+                                <Span Text="Fecha: martes 14 de febrero de 2017, 12 hrs." />
+                                <Span Text="Facultad de Contaduría y Administración UAQ, Campus Cerro de las Campanas" FontAttributes="Bold" />
+                                <Span Text="." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+       </ScrollView>-->
+	</ContentPage.Content>
+</ContentPage>
