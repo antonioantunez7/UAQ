@@ -17,6 +17,11 @@ namespace ecUAQ.Models
             image.Opacity = 0.5;
         }
 
+        public int id{
+            get;
+            set;
+        }
+
         public string titulo
         {
             get;

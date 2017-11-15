@@ -53,6 +53,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\DetalleEvento.xaml.cs">
       <DependentUpon>DetalleEvento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\EventosDataStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
