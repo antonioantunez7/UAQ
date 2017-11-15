@@ -1,19 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.ProyectoCultura">
-	<ContentPage.Content>
-        <ScrollView>
-            <StackLayout Padding="12">
-                <Label Text="PROYECTO CULTURA UAQ" FontSize="14"></Label>
-                <Image Source="xamarin_logo.png"/><!--Misma imagen en todas las plataformas: Android en Resources>drawable>imagen.png y en IOS en Resources>imagen.png-->
-                <Label FontSize="10" HorizontalTextAlignment="Center">
+	<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,0,0,0" VerticalOptions="FillAndExpand">
+                    <Image Source="banner_proyectocultura.jpg" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="100"/>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label FontSize="16" HorizontalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Recuperando la experiencia universitaria y atendiendo a las políticas institucionales de la Universidad Autónoma de Querétaro, el Rector presentó el 30 de junio, ante el H. Consejo Universitario, la propuesta para la creación de la Secretaría de Cultura, cuyo objetivo es trabajar con una noción amplia de cultura que posibilite a los universitarios tener las herramientas necesarias para incidir de manera positiva en la sociedad. Esta concepción de cultura integra al arte, las prácticas sociales, la visión científica y humanista, la tecnología, la memoria y la identidad de la comunidad universitaria, con una perspectiva de compromiso social,
-    El Proyecto Cultura UAQ promueve esa concepción y tiene como propósito incidir en la formación integral de la comunidad universitaria y la sociedad en general a través de ocho áreas: Arte y Tecnología, Cine Documental, Ciudadanía, Divulgación Científica, Gestión Cultural, Humanidades, Interculturalidad y Producciones Audiovisuales." />
+                            <FormattedString.Spans>
+                                <Span Text="PROYECTO CULTURA UAQ" FontAttributes="Bold" FontSize="22" />
+                                <Span Text=" " />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Recuperando la experiencia universitaria y atendiendo a las políticas institucionales de la Universidad Autónoma de Querétaro, el Rector presentó el 30 de junio, ante el H. Consejo Universitario, la propuesta para la creación de la Secretaría de Cultura, cuyo objetivo es trabajar con una noción amplia de cultura que posibilite a los universitarios tener las herramientas necesarias para incidir de manera positiva en la sociedad. Esta concepción de cultura integra al arte, las prácticas sociales, la visión científica y humanista, la tecnología, la memoria y la identidad de la comunidad universitaria, con una perspectiva de compromiso social" />
+                                <Span Text="." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="El Proyecto Cultura UAQ promueve esa concepción y tiene como propósito incidir en la formación integral de la comunidad universitaria y la sociedad en general a través de ocho áreas: Arte y Tecnología, Cine Documental, Ciudadanía, Divulgación Científica, Gestión Cultural, Humanidades, Interculturalidad y Producciones Audiovisuales" />
+                                <Span Text="." />
+                            </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
             </StackLayout>
-       </ScrollView>
-	</ContentPage.Content>
+        </ScrollView>
+    </Grid>
 </ContentPage>
