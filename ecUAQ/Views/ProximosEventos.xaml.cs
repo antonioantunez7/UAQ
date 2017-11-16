@@ -38,6 +38,7 @@ namespace ecUAQ.Views
             ListaEventos.ItemsSource = eventos;
         }
 
+
         public async void detalle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
             var evento = e.SelectedItem as Eventos;

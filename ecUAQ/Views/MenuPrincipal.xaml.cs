@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using ecUAQ.Models;
+using ecUAQ.Services;
 using Xamarin.Forms;
 
 namespace ecUAQ.Views
@@ -15,12 +17,12 @@ namespace ecUAQ.Views
 
         void inicio()
         {
-            List<Menu> menu = new List<Menu>{
-                new Menu { id= 1, titulo = "Inicio"/*, detalle = "Regresa a la página de inicio."*/, icono = "inicio.png"},
-                new Menu { id= 2, titulo = "Proyecto cultura"/*, detalle = "Regresa a la página de proyecto cultura."*/, icono = "proyectoCultura.png"},
-                new Menu { id= 3, titulo = "Proximos eventos"/*, detalle = "Regresa a la página de proximos eventos."*/, icono = "proximos.png"},
-                new Menu { id= 4, titulo = "Acerca de"/*, detalle = "Regresa a la página de acerca de."*/, icono = "acerca.png"},
-                new Menu { id= 5, titulo = "Salir"/*, detalle = "Cerrar la aplicación."*/, icono = "salir.png"}
+            List<Models.Menu> menu = new List<Models.Menu>{//Le cambie Menu a Models.Menu porque al ejecutarlo en iOS manda error de ambiguo
+                new Models.Menu { id= 1, titulo = "Inicio"/*, detalle = "Regresa a la página de inicio."*/, icono = "inicio.png"},
+                new Models.Menu { id= 2, titulo = "Proyecto cultura"/*, detalle = "Regresa a la página de proyecto cultura."*/, icono = "proyectoCultura.png"},
+                new Models.Menu { id= 3, titulo = "Proximos eventos"/*, detalle = "Regresa a la página de proximos eventos."*/, icono = "proximos.png"},
+                new Models.Menu { id= 4, titulo = "Acerca de"/*, detalle = "Regresa a la página de acerca de."*/, icono = "acerca.png"},
+                new Models.Menu { id= 5, titulo = "Salir"/*, detalle = "Cerrar la aplicación."*/, icono = "salir.png"}
             };
             ListaMenu.ItemsSource = menu;
 
@@ -29,7 +31,7 @@ namespace ecUAQ.Views
 
         public async void ListaMenu_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
-            var menu = e.SelectedItem as Menu;
+            var menu = e.SelectedItem as Models.Menu;
             if (menu != null)
             {
                 //if (menu.titulo.Equals("Inicio"))
@@ -64,6 +66,29 @@ namespace ecUAQ.Views
                 }
                 ListaMenu.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
             }
+        }
+
+        protected override void OnAppearing()
+        {
+            Debug.Write("Voy a cargar el webservice");
+            base.OnAppearing();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                RestClient cliente = new RestClient();
+                Debug.Write("Voy hacer la petincion");
+                //var eventos = await cliente.Get<Eventos>("http://189.211.201.181:75/GazzetaWebservice2/api/tblgaleria");
+                var eventos = await cliente.Get<ListaGale>("http://189.211.201.181:75/GazzetaWebservice2/api/tblgaleria");
+                Debug.Write(eventos);
+                foreach(var algo in eventos.listaGaleria){
+                    Debug.Write(algo.url_imagen);
+                }
+                if (eventos != null)
+                {
+                    Debug.Write("Json: \n");
+                    Debug.Write(eventos);
+                    Debug.Write("Termine de cargar el webservice");
+                }
+            });
         }
     }
 }

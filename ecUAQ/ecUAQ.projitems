@@ -54,6 +54,13 @@
       <DependentUpon>DetalleEvento.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Services\EventosDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\InterfaceEventosDataStore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EventosViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RestClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Galeria.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Categorias.xaml.cs">
+      <DependentUpon>Categorias.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -85,5 +92,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Categorias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
