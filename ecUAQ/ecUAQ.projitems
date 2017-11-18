@@ -61,6 +61,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Categorias.xaml.cs">
       <DependentUpon>Categorias.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Categorias.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />

@@ -63,6 +63,11 @@ namespace ecUAQ.Models
             set { image.Source = value; }
         }
 
+        public int cveCategoria{
+            get;
+            set;
+        }
+
         public int idGeolocalizacion{
             get;
             set;

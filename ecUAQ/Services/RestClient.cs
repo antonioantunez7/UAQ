@@ -15,7 +15,7 @@ namespace ecUAQ
                 Debug.Write(respuesta);
                 if(respuesta.StatusCode == System.Net.HttpStatusCode.OK){
                     var jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
-                    var jsonArmado = "{'listaGaleria':" + jsonRespuesta + "}";
+                    var jsonArmado = "{'listaCategorias':" + jsonRespuesta + "}";
                     Debug.WriteLine(jsonArmado); 
                     return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
                 }

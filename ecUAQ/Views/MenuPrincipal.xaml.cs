@@ -20,13 +20,15 @@ namespace ecUAQ.Views
             List<Models.Menu> menu = new List<Models.Menu>{//Le cambie Menu a Models.Menu porque al ejecutarlo en iOS manda error de ambiguo
                 new Models.Menu { id= 1, titulo = "Inicio"/*, detalle = "Regresa a la página de inicio."*/, icono = "inicio.png"},
                 new Models.Menu { id= 2, titulo = "Proyecto cultura"/*, detalle = "Regresa a la página de proyecto cultura."*/, icono = "proyectoCultura.png"},
-                new Models.Menu { id= 3, titulo = "Proximos eventos"/*, detalle = "Regresa a la página de proximos eventos."*/, icono = "proximos.png"},
+                //new Models.Menu { id= 3, titulo = "Proximos eventos"/*, detalle = "Regresa a la página de proximos eventos."*/, icono = "proximos.png"},
+                new Models.Menu { id= 3, titulo = "Cartelera"/*, detalle = "Regresa a la página de proximos eventos."*/, icono = "proximos.png"},
                 new Models.Menu { id= 4, titulo = "Acerca de"/*, detalle = "Regresa a la página de acerca de."*/, icono = "acerca.png"},
                 new Models.Menu { id= 5, titulo = "Salir"/*, detalle = "Cerrar la aplicación."*/, icono = "salir.png"}
             };
             ListaMenu.ItemsSource = menu;
 
-            Detail = new NavigationPage(new PaginaInicio());
+            //Detail = new NavigationPage(new PaginaInicio());
+            Detail = new NavigationPage(new Categorias());//Se cambia para que sea la cartelera la primera en cargar
         }
 
         public async void ListaMenu_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
@@ -45,10 +47,15 @@ namespace ecUAQ.Views
                     IsPresented = false;//Para que el menu desapasca cuando se le haga click
                     Detail = new NavigationPage(new ProyectoCultura());
                 }
-                if (menu.id == 3)//Proximos eventos
+                /*if (menu.id == 3)//Proximos eventos
                 {
                     IsPresented = false;//Para que el menu desapasca cuando se le haga click
                     Detail = new NavigationPage(new ProximosEventos());
+                }*/
+                if (menu.id == 3)//Categorias
+                {
+                    IsPresented = false;//Para que el menu desapasca cuando se le haga click
+                    Detail = new NavigationPage(new Categorias());
                 }
                 if (menu.id == 4)//Acerca de
                 {
@@ -68,7 +75,7 @@ namespace ecUAQ.Views
             }
         }
 
-        protected override void OnAppearing()
+        /*protected override void OnAppearing()
         {
             Debug.Write("Voy a cargar el webservice");
             base.OnAppearing();
@@ -89,6 +96,6 @@ namespace ecUAQ.Views
                     Debug.Write("Termine de cargar el webservice");
                 }
             });
-        }
+        }*/
     }
 }

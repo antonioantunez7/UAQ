@@ -10,14 +10,15 @@
                      Padding="5,5,0,5"
                      Spacing="5">
                         <Image Source="{Binding url_portada}"
-                             WidthRequest="60"
-                             HeightRequest="60"
-                             VerticalOptions="Center" />
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            VerticalOptions="Center" />
                         <Label Text="{Binding titulo}"
-                             FontSize="14"
-                             FontAttributes="Bold"
-                             VerticalOptions="Center"
-                             TextColor="Black"/>
+                            FontFamily="Futura-Medium"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            VerticalOptions="Center"
+                            TextColor="#245664"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

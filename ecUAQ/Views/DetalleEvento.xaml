@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.DetalleEvento">
-	<ContentPage.Content>
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout>
                 <ListView
@@ -25,13 +25,13 @@
                                         
                                         <ScrollView Grid.Row="1">
                                             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                                                <Label Text="{Binding titulo}" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" FontFamily="Arial"></Label>
-                                                <Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Arial"></Label>
-                                                <Label Text="{Binding organizador}" FontSize="12" HorizontalOptions="Center" FontFamily="Arial"></Label>
-                                                <Label Text="{Binding lugarEvento}" FontSize="12" HorizontalOptions="Center" FontFamily="Arial"></Label>
-                                                <Label Text="{Binding notas}" FontSize="12" HorizontalOptions="Center" FontFamily="Arial"></Label>
-                                                <Label Text="{Binding fechaInicio}" FontSize="10" HorizontalOptions="Center" FontFamily="Arial"></Label>
-                                                <Label Text="{Binding fechaFin}" FontSize="10" HorizontalOptions="Center" FontFamily="Arial"></Label>
+                                                <Label Text="{Binding titulo}" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" FontFamily="Futura-Medium" TextColor="#245664"></Label>
+                                                <Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Label Text="{Binding organizador}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Label Text="{Binding lugarEvento}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Label Text="{Binding notas}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Label Text="{Binding fechaInicio}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Label Text="{Binding fechaFin}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
                                             </StackLayout>
                                         </ScrollView>
                                 </Grid>
@@ -42,5 +42,5 @@
                 </ListView>
             </StackLayout>
        </ScrollView>
-	</ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>
