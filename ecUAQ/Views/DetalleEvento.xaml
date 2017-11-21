@@ -17,8 +17,8 @@
                                         </Grid.RowDefinitions>
                                         <StackLayout BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
                                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                                                <ContentView Padding="0,0,0,10" VerticalOptions="FillAndExpand">
-                                                    <Image Source="{Binding url_portada}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="200"/>
+                                                <ContentView Padding="0,0,0,0" VerticalOptions="FillAndExpand">
+                                                    <Image Source="{Binding url_portada}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HeightRequest="300"/>
                                                 </ContentView>
                                             </StackLayout>
                                         </StackLayout>

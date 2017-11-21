@@ -45,7 +45,7 @@ namespace ecUAQ.Views
             {
                 RestClient cliente = new RestClient();
                 //var categorias = await cliente.Get<ListaCategorias>("http://189.211.201.181:75/GazzetaWebservice2/api/tblcategorias");
-                var categorias = await cliente.Get<ListaCategorias>("http://189.211.201.181:77/CulturaUAQWebservice/api/tblcategorias");
+                var categorias = await cliente.Get<ListaCategorias>("http://189.211.201.181:86/CulturaUAQWebservice/api/tblcategorias");
                 //var categorias = await cliente.Get<ListaCategorias>("https://images.vexels.com/media/users/3/141217/isolated/lists/a2503907aa82c79fc1e8a82f58d722ed-tel-fono-inteligente-icono-ronda.png");
                 Debug.Write(categorias);
                 if (categorias != null)
@@ -101,17 +101,16 @@ namespace ecUAQ.Views
                                     //BackgroundColor = Color.Black,
                                     HorizontalOptions = LayoutOptions.FillAndExpand,
                                     VerticalOptions = LayoutOptions.FillAndExpand,
-                                    VerticalTextAlignment = TextAlignment.Center,
+                                    VerticalTextAlignment = TextAlignment.End,
                                     HorizontalTextAlignment = TextAlignment.Center,
                                     FontFamily = "Arial",
                                     TextColor = Color.Black,
-                                    Opacity = 0.8
+                                    Opacity = 1
                                 };
                                 label.FontFamily = "Futura-Medium";
                                 label.FontAttributes = FontAttributes.Bold;
                                 label.Text = categorias.listaCategorias[columnas].descCategoria;
                                 gridCategorias.Children.Add(label, auxColumnas, renglones);
-
 
                                 //Crear el objeto a insertar
                                 int cveCategoria = categorias.listaCategorias[columnas].cveCategoria;
@@ -122,7 +121,8 @@ namespace ecUAQ.Views
                                 var imagen = new Image()
                                 {
                                     Source = url_portada,
-                                    HeightRequest = 50,
+                                    HeightRequest = 120,
+                                    VerticalOptions = LayoutOptions.Start,
                                     Opacity = 0.8
                                 };
                                 //Se crea el evento del clic de la imagen
@@ -133,8 +133,6 @@ namespace ecUAQ.Views
                                 };
                                 imagen.GestureRecognizers.Add(tapGestureRecognizer);
                                 gridCategorias.Children.Add(imagen, auxColumnas, renglones);
-
-
                             }
                             auxColumnas++;
                         }

@@ -1,20 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace ecUAQ.Models
 {
     public class Eventos
     {
-        Image image;
         public Eventos()
         {
-            image = new Image
-            {
-                HeightRequest = 20,
-                WidthRequest = 20,
-            };
-
-            image.Opacity = 0.5;
         }
 
         public int idEvento{
@@ -57,10 +50,10 @@ namespace ecUAQ.Models
             set;
         }
 
-        public ImageSource url_portada
+        public string url_portada
         {
-            get { return image.Source; }
-            set { image.Source = value; }
+            get;
+            set;
         }
 
         public int cveCategoria{
@@ -83,4 +76,10 @@ namespace ecUAQ.Models
             set;
         }
     }
+
+    public class ListaEventos
+    {
+        public List<Eventos> listaEventos { get; set; }
+    }
+
 }
