@@ -69,8 +69,8 @@ namespace ecUAQ.Droid
 			var notificationPendingIntent =	stackBuilder.GetPendingIntent (0, (int)PendingIntentFlags.UpdateCurrent);
 
 			var builder = new NotificationCompat.Builder (this);
-			builder.SetSmallIcon (Resource.Drawable.icon)
-				.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.icon))
+			builder.SetSmallIcon (Resource.Drawable.logo_proyecto)
+				.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.logo_proyecto))
 				.SetColor (Color.Transparent)
 				.SetContentTitle (notificationDetails)
 				.SetContentText (GetString (Resource.String.geofence_transition_notification_text))
