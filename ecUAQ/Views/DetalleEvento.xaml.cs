@@ -36,5 +36,7 @@ namespace ecUAQ.Views
                 DetalleDelEvento.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
             }  
         }
+
+
     }
 }

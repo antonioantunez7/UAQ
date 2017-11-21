@@ -68,7 +68,12 @@ namespace ecUAQ.Models
             set;
         }
 
-        public int idGeolocalizacion{
+        public string latitud{
+            get;
+            set;
+        }
+
+        public string longitud{
             get;
             set;
         }

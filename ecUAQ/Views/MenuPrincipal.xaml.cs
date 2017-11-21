@@ -68,7 +68,9 @@ namespace ecUAQ.Views
                     var resp = await this.DisplayAlert("Confirmación", "¿Salir de la app?", "SI", "NO");
                     if (resp)
                     {
-                        await this.Navigation.PopAsync();//Cierra la aplicación
+                        //await this.Navigation.PopAsync();//Cierra la aplicación
+                        System.Environment.Exit(0); 
+
                     }
                 }
                 ListaMenu.SelectedItem = null;//Para que automaticamente se deseleccione el elemento

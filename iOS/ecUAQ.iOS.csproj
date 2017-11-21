@@ -114,6 +114,9 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Icono.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Icono.appiconset\proximos.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab_about.png" />
@@ -169,6 +172,9 @@
     <EmbeddedResource Include="Resources\pitarraf.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\Icono.appiconset\" />
   </ItemGroup>
   <Import Project="..\ecUAQ\ecUAQ.projitems" Label="Shared" Condition="Exists('..\ecUAQ\ecUAQ.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
