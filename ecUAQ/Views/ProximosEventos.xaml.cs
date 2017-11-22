@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using ecUAQ.Models;
 using Xamarin.Forms;
 
@@ -49,8 +50,8 @@ namespace ecUAQ.Views
                                 organizador = evento.organizador,
                                 lugarEvento = evento.lugarEvento,
                                 notas = evento.notas,
-                                fechaInicio = evento.fechaInicio,
-                                fechaFin = evento.fechaFin,
+                                fechaInicio = this.fechaSQLaNormal(evento.fechaInicio),
+                                fechaFin = this.fechaSQLaNormal(evento.fechaFin),
                                 url_portada = url_portada
                             });
                             Debug.Write(evento);
@@ -68,6 +69,12 @@ namespace ecUAQ.Views
                 } else{
                 }
             });
+        }
+
+        public string fechaSQLaNormal(string fecha){
+            string[] fechaHoralNormal = fecha.Split('T');
+            string[] fechaNormal = fechaHoralNormal[0].Split('-');
+            return fechaNormal[2]+"/"+fechaNormal[1]+"/"+fechaNormal[0];     
         }
 
         void cargaProximosEventos()

@@ -18,8 +18,17 @@
                             FontSize="14"
                             FontAttributes="Bold"
                             VerticalOptions="Center"
-                            TextColor="#245664"/>
+                            TextColor="#245664" />
+                        <Label Text="{Binding fechaInicio}"
+                            FontFamily="Futura-Medium"
+                            HorizontalTextAlignment="End"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="CenterAndExpand"
+                            FontSize="10"
+                            FontAttributes="Bold"
+                            TextColor="Black" WidthRequest="100"/>   
                     </StackLayout>
+                       
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

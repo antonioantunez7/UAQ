@@ -82,4 +82,9 @@ namespace ecUAQ.Models
         public List<Eventos> listaEventos { get; set; }
     }
 
+    public class VistaEventos
+    {
+        public List<Eventos> vistaEventos { get; set; }
+    }
+
 }
