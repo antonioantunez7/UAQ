@@ -28,7 +28,7 @@ namespace ecUAQ.Views
             {
                 titulo = "Cargando eventos, por favor espere..."
             });
-            ListaEventos.IsEnabled = false;//Le quita el evento del clic
+            //ListaEventos.IsEnabled = false;//Le quita el evento del clic
             ListaEventos.ItemsSource = leventos;
             Device.BeginInvokeOnMainThread(async () =>
             {
@@ -62,7 +62,7 @@ namespace ecUAQ.Views
                         {
                             titulo = "No hay eventos para esta categoría"
                         });
-                        ListaEventos.IsEnabled = false;//Le quita el evento del clic
+                        //ListaEventos.IsEnabled = false;//Le quita el evento del clic
                         ListaEventos.ItemsSource = leventos;
                     }
                 } else{
