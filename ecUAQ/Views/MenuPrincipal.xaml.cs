@@ -39,32 +39,32 @@ namespace ecUAQ.Views
                 //if (menu.titulo.Equals("Inicio"))
                 if (menu.id == 1)//Inicio
                 {
-                    IsPresented = false;//Para que el menu desapasca cuando se le haga click
+                    IsPresented = false;//Para que el menu desaparesca cuando se le haga click
                     Detail = new NavigationPage(new PaginaInicio());
                 }
                 if (menu.id == 2)//Proyecto cultura
                 {
-                    IsPresented = false;//Para que el menu desapasca cuando se le haga click
+                    IsPresented = false;//Para que el menu desaparesca cuando se le haga click
                     Detail = new NavigationPage(new ProyectoCultura());
                 }
                 /*if (menu.id == 3)//Proximos eventos
                 {
-                    IsPresented = false;//Para que el menu desapasca cuando se le haga click
+                    IsPresented = false;//Para que el menu desaparesca cuando se le haga click
                     Detail = new NavigationPage(new ProximosEventos());
                 }*/
                 if (menu.id == 3)//Categorias
                 {
-                    IsPresented = false;//Para que el menu desapasca cuando se le haga click
+                    IsPresented = false;//Para que el menu desaparesca cuando se le haga click
                     Detail = new NavigationPage(new Categorias());
                 }
                 if (menu.id == 4)//Acerca de
                 {
-                    IsPresented = false;//Para que el menu desapasca cuando se le haga click
+                    IsPresented = false;//Para que el menu desaparesca cuando se le haga click
                     Detail = new NavigationPage(new AcercaDe());
                 }
                 if (menu.id == 5)//Salir
                 {
-                    IsPresented = false;//Para que el menu desapasca cuando se le haga click
+                    IsPresented = false;//Para que el menu desaparesca cuando se le haga click
                     var resp = await this.DisplayAlert("Confirmación", "¿Salir de la app?", "SI", "NO");
                     if (resp)
                     {
