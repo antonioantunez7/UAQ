@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.ProximosEventos">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.ProximosEventos" Title="Eventos">
     <ListView Opacity="0.8" RowHeight="100"
             x:Name="ListaEventos" ItemSelected="detalle_ItemSelected" ItemsSource="{Binding ListaEventos}" HeightRequest="80">
         <ListView.ItemTemplate>

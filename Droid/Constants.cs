@@ -15,6 +15,7 @@ namespace ecUAQ.Droid
 
         public static readonly Dictionary<string, LatLng> BAY_AREA_LANDMARKS = new Dictionary<string, LatLng> {
             { "PJEM", new LatLng (19.2920, -99.647427) },
+            { "Casa de Toño", new LatLng(19.2735906,-99.6755938)},
             { "World Trade Center", new LatLng (19.393664, -99.1745978) },
             { "Aeropuerto CDMX", new LatLng (19.4360762, -99.074097) },
             { "Arizoba", new LatLng (19.3933049, -99.181077) }

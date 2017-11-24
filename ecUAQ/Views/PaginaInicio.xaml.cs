@@ -82,7 +82,7 @@ namespace ecUAQ.Views
                                     notas = eventos.vistaEventos[columnas].notas,
                                     fechaInicio = this.fechaSQLaNormal(eventos.vistaEventos[columnas].fechaInicio),
                                     fechaFin = this.fechaSQLaNormal(eventos.vistaEventos[columnas].fechaFin),
-                                    url_portada = eventos.vistaEventos[columnas].url_portada
+                                    url_portada = "http://189.211.201.181:86/" + eventos.vistaEventos[columnas].url_portada
                                 };
                                 /*Se crea el objeto de tipo evento*/
                                 var label = new Label()
