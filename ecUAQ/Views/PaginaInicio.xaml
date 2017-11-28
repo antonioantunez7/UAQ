@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.PaginaInicio" Title="Próximos eventos">
-	<!--<StackLayout Padding="12">
-        <Label FontSize="20" TextColor="White" FontAttributes="Bold" FontFamily="Futura-Medium" Text="C U L T U R A   U A Q" VerticalOptions="Center" HorizontalOptions="Center"></Label>
-        <StackLayout VerticalOptions="FillAndExpand"
-                             Orientation="Horizontal"
-                             Padding="0,0,0,0"
-                             Spacing="5">
-            <Image Source="logo_proyecto.png"
-                 WidthRequest="150"
-                 HeightRequest="150"
-                 VerticalOptions="CenterAndExpand" 
-                 HorizontalOptions="CenterAndExpand"/>
-        </StackLayout>
-    </StackLayout>-->
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ecUAQ.Views.PaginaInicio" 
+    Title="Próximos eventos">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand" Padding="12">
             <ScrollView x:Name="vistaEventos" VerticalOptions="FillAndExpand"></ScrollView>

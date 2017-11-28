@@ -24,6 +24,7 @@ namespace ecUAQ.Views
                 new Models.Menu { id= 3, titulo = "Cartelera"/*, detalle = "Regresa a la página de proximos eventos."*/, icono = "proximos.png"},
                 new Models.Menu { id= 4, titulo = "Acerca de"/*, detalle = "Regresa a la página de acerca de."*/, icono = "acerca.png"},
                 new Models.Menu { id= 5, titulo = "Salir"/*, detalle = "Cerrar la aplicación."*/, icono = "salir.png"}
+                //new Models.Menu { id= 6, titulo = "Calendario"/*, detalle = "Cerrar la aplicación."*/, icono = "proximos.png"}
             };
             ListaMenu.ItemsSource = menu;
 
@@ -40,7 +41,7 @@ namespace ecUAQ.Views
                 if (menu.id == 1)//Inicio
                 {
                     IsPresented = false;//Para que el menu desaparesca cuando se le haga click
-                    Detail = new NavigationPage(new PaginaInicio());
+                    Detail = new NavigationPage(new Calendario());
                 }
                 if (menu.id == 2)//Proyecto cultura
                 {
@@ -73,6 +74,11 @@ namespace ecUAQ.Views
 
                     }
                 }
+                /*if (menu.id == 6)//Calendario
+                {
+                    IsPresented = false;//Para que el menu desaparesca cuando se le haga click
+                    Detail = new NavigationPage(new AboutPage());
+                }*/
                 ListaMenu.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
             }
         }

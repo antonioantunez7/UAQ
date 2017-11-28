@@ -57,7 +57,8 @@
                 BuildGoogleApiClient();
                 Log.Info(TAG, "BuildGoogleApiClient");
                 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-
+                
+                XamForms.Controls.Droid.Calendar.Init();  // <<<<<!!! Please insert this
                 LoadApplication(new App());
                 Log.Info(TAG, "LoadApplication");
                 //RemoveGeofencesButtonHandler();
