@@ -71,7 +71,7 @@ namespace ecUAQ.Droid
 			var builder = new NotificationCompat.Builder (this);
 			builder.SetSmallIcon (Resource.Drawable.logo_proyecto)
 				.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.logo_proyecto))
-				.SetColor (Color.Transparent)
+				.SetColor (Color.Black)
 				.SetContentTitle (notificationDetails)
 				.SetContentText (GetString (Resource.String.geofence_transition_notification_text))
 				.SetContentIntent (notificationPendingIntent)

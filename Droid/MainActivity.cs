@@ -15,8 +15,10 @@
     using Android.Media;
     using Android.Util;
     using Java.Lang;
+using ecUAQ.Models;
+using Android.Gms.Maps.Model;
 
-    namespace ecUAQ.Droid
+namespace ecUAQ.Droid
     {
     [Activity(Label = "Cultura UAQ", Icon = "@drawable/logo_proyecto", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 
@@ -206,11 +208,25 @@
                 return PendingIntent.GetService(this, 0, intent, PendingIntentFlags.UpdateCurrent);
             }
 
-            public void PopulateGeofenceList()
+            public async void PopulateGeofenceList()
             {
+                RestClient cliente = new RestClient();
+                var eventos = await cliente.Get2<ListaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos");
+                if (eventos != null)
+                {
+                    if (eventos.listaEventos.Count > 0)
+                    {
+                        foreach (var evento in eventos.listaEventos)
+                        {
+                            Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(System.Double.Parse(evento.latitud), System.Double.Parse(evento.longitud)));
+                        }
+                    }
+                }
                 Log.Info(TAG, "PopulateGeofenceList");
                 foreach (var entry in Constants.BAY_AREA_LANDMARKS)
                 {
+                    System.Diagnostics.Debug.Write("titulo");
+                    System.Diagnostics.Debug.Write(entry.Key);
                     mGeofenceList.Add(new GeofenceBuilder()
                         .SetRequestId(entry.Key)
                         .SetCircularRegion(
