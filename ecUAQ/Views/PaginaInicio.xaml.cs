@@ -73,6 +73,7 @@ namespace ecUAQ.Views
                             else
                             {
                                 /*Se crea el objeto de tipo evento*/
+                                string url_portadaE = "http://189.211.201.181:86/" + eventos.vistaEventos[columnas].url_portada;
                                 Eventos eventoX = new Eventos{
                                     idEvento = eventos.vistaEventos[columnas].idEvento,
                                     titulo = eventos.vistaEventos[columnas].titulo,
@@ -82,7 +83,7 @@ namespace ecUAQ.Views
                                     notas = eventos.vistaEventos[columnas].notas,
                                     fechaInicio = this.fechaSQLaNormal(eventos.vistaEventos[columnas].fechaInicio),
                                     fechaFin = this.fechaSQLaNormal(eventos.vistaEventos[columnas].fechaFin),
-                                    url_portada = "http://189.211.201.181:86/" + eventos.vistaEventos[columnas].url_portada
+                                    url_portada = url_portadaE
                                 };
                                 /*Se crea el objeto de tipo evento*/
                                 var label = new Label()

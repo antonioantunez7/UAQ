@@ -41,7 +41,7 @@ namespace ecUAQ.Views
                 if (menu.id == 1)//Inicio
                 {
                     IsPresented = false;//Para que el menu desaparesca cuando se le haga click
-                    Detail = new NavigationPage(new Calendario());
+                    Detail = new NavigationPage(new PaginaInicio());
                 }
                 if (menu.id == 2)//Proyecto cultura
                 {

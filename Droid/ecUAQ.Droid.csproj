@@ -30,7 +30,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AndroidCreatePackagePerAbi>true</AndroidCreatePackagePerAbi>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,12 +39,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
-    <AndroidCreatePackagePerAbi>true</AndroidCreatePackagePerAbi>
-    <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <BundleAssemblies>true</BundleAssemblies>
-    <EnableProguard>true</EnableProguard>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

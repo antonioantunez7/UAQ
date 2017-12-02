@@ -218,7 +218,10 @@ namespace ecUAQ.Droid
                     {
                         foreach (var evento in eventos.listaEventos)
                         {
-                            Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(System.Double.Parse(evento.latitud), System.Double.Parse(evento.longitud)));
+                            //Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(System.Double.Parse(evento.latitud), System.Double.Parse(evento.longitud)));
+                            double latitud = System.Double.Parse(evento.latitud);
+                            double longitud = System.Double.Parse(evento.longitud);
+                            Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(latitud, longitud));
                         }
                     }
                 }
