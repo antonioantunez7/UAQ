@@ -3,12 +3,12 @@
     <MasterDetailPage.Master>
         <ContentPage 
             Title="Cultura UAQ">
-            <ListView Opacity="0.5" HasUnevenRows="true"
+            <ListView Opacity="1" HasUnevenRows="true"
                 x:Name="ListaMenu" ItemSelected="ListaMenu_ItemSelected" Header="">
                 <ListView.HeaderTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Image Source="logo_proyecto.png" VerticalOptions="Center" HeightRequest="64" BackgroundColor="Black"/>
+                            <Image Source="logo_proyecto.png" VerticalOptions="Center" HeightRequest="100" BackgroundColor="Black"/>
                         </Grid>
                     </DataTemplate>
                 </ListView.HeaderTemplate>

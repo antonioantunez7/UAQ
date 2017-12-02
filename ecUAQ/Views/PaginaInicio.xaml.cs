@@ -56,13 +56,13 @@ namespace ecUAQ.Views
                         {
                             if (columnas == 0)
                             {
-                                gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 150 });
+                                gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 170 });
                                 auxColumnas = 0;
                             }
                             else if (auxColumnas / maximoColumnas == 1)
                             {//Si todavia faltan elementos 
                                 //Crear renglon    
-                                gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 150 });
+                                gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 170 });
                                 renglones++;
                                 auxColumnas = 0;
                             }

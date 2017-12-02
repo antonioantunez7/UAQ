@@ -61,7 +61,7 @@
                         <FormattedString>
                             <FormattedString.Spans>
                                 <Span Text="Última actualización: " FontAttributes="Bold" />
-                                <Span Text="14 de Noviembre de 2017" />
+                                <Span Text="01 de Diciembre de 2017" />
                                 <Span Text="." />
                             </FormattedString.Spans>
                         </FormattedString>
