@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using ecUAQ.Models;
 using Xamarin.Forms;
@@ -28,6 +28,7 @@ namespace ecUAQ.Views
                         new SpecialDate(DateTime.Parse((ev.fechaInicio)))
                         {
                             BackgroundImage = "calendario.png",
+
                             //BackgroundColor = Color.Turquoise,
                             //TextColor = Color.White,
                             TextColor = Color.Black,
