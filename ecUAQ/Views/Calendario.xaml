@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.Calendario" xmlns:vm="clr-namespace:ecUAQ;" Title="Calendario"
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"   
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ecUAQ.Views.Calendario" 
+    xmlns:vm="clr-namespace:ecUAQ;"
+    Title="Calendario"
     xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar">
     <ContentPage.Content>
-        <ScrollView>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                            <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                                <controls:Calendar
-                            Padding="10,0,10,0" 
-                            SelectedBorderWidth="4" 
-                            DisabledBorderColor="Black"
-                            ShowNumberOfWeek="false"
-                            StartDay="Monday"
-                            TitleLabelTextColor="Purple"
-                            TitleLeftArrowTextColor="Blue"
-                            SelectedDate="{Binding Date}"
-                            SpecialDates="{Binding Attendances}"
-                            DateCommand="{Binding DateChosen}"
-                            VerticalOptions="CenterAndExpand"
-                                HorizontalOptions="CenterAndExpand">
-                            </controls:Calendar>
-                            </ContentView>
-                        </StackLayout>
-                    </StackLayout>
-                    <ScrollView Grid.Row="1">
-                        <StackLayout VerticalOptions="FillAndExpand" Padding="12">
-                            <ScrollView x:Name="vistaEventos" VerticalOptions="FillAndExpand"></ScrollView>
-                        </StackLayout>   
-                    </ScrollView>
-                </Grid>
-            </ScrollView>
     </ContentPage.Content>
 </ContentPage>
