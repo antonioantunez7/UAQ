@@ -27,10 +27,9 @@ namespace ecUAQ.Views
                     SpecialDates.Add(
                         new SpecialDate(DateTime.Parse((ev.fechaInicio)))
                         {
-                            BackgroundImage = "calendario.png",
+                            //BackgroundImage = "calendario.png",
 
-                            //BackgroundColor = Color.Turquoise,
-                            //TextColor = Color.White,
+                        BackgroundColor = Color.DarkBlue,                         //TextColor = Color.White,
                             TextColor = Color.Black,
                             //BorderColor = Color.Aqua,
                             //BorderWidth = 5,

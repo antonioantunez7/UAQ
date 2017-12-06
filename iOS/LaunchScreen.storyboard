@@ -21,8 +21,8 @@
                             <accessibilityTraits key="traits" image="YES"/>
                         </accessibility>
                         <subviews>
-                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="fondo.jpg" userInteractionEnabled="NO">
-                                <rect key="frame" x="160" y="240" width="0.0" height="0.0"/>
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" userInteractionEnabled="NO" image="splash.png">
+                                <rect key="frame" x="68" y="222" width="473" height="75"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -63,5 +63,7 @@
         <image name="proximos.png" width="32" height="32"/>
         <image name="proyectoCultura.png" width="60" height="61"/>
         <image name="salir.png" width="32" height="32"/>
+        <image name="calendario.png" width="256" height="256"/>
+        <image name="splash.png" width="500" height="768"/>
     </resources>
 </document>
