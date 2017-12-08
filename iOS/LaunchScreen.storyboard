@@ -13,16 +13,16 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="center" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" image="YES"/>
                         </accessibility>
                         <subviews>
-                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" userInteractionEnabled="NO" image="splash.png">
-                                <rect key="frame" x="68" y="222" width="473" height="75"/>
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" userInteractionEnabled="NO" image="splash2.png">
+                                <rect key="frame" x="155" y="348" width="94" height="142"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,5 +65,6 @@
         <image name="salir.png" width="32" height="32"/>
         <image name="calendario.png" width="256" height="256"/>
         <image name="splash.png" width="500" height="768"/>
+        <image name="splash2.png" width="500" height="761"/>
     </resources>
 </document>

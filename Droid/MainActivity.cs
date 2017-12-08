@@ -211,6 +211,7 @@ namespace ecUAQ.Droid
             public async void PopulateGeofenceList()
             {
                 RestClient cliente = new RestClient();
+                Constants.BAY_AREA_LANDMARKS.Clear();
                 var eventos = await cliente.Get2<ListaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos");
                 if (eventos != null)
                 {
@@ -221,20 +222,20 @@ namespace ecUAQ.Droid
                             //Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(System.Double.Parse(evento.latitud), System.Double.Parse(evento.longitud)));
                             double latitud = System.Double.Parse(evento.latitud);
                             double longitud = System.Double.Parse(evento.longitud);
-                            Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(latitud, longitud));
+                            Constants.BAY_AREA_LANDMARKS.Add(evento, new LatLng(latitud, longitud));
                         }
                     }
                 }
                 Log.Info(TAG, "PopulateGeofenceList");
                 foreach (var entry in Constants.BAY_AREA_LANDMARKS)
                 {
-                    System.Diagnostics.Debug.Write("titulo");
-                    System.Diagnostics.Debug.Write(entry.Key);
+                System.Diagnostics.Debug.Write("************** even **************");
+                System.Diagnostics.Debug.Write(entry);
                     mGeofenceList.Add(new GeofenceBuilder()
-                        .SetRequestId(entry.Key)
+                        .SetRequestId("lalo")
                         .SetCircularRegion(
-                            entry.Value.Latitude,
-                            entry.Value.Longitude,
+                                          19.376118,-99.741856
+                            ,
                             Constants.GEOFENCE_RADIUS_IN_METERS
                         )
                         .SetExpirationDuration(Constants.GEOFENCE_EXPIRATION_IN_MILLISECONDS)
@@ -247,7 +248,7 @@ namespace ecUAQ.Droid
             protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
             {
                 base.OnActivityResult(requestCode, resultCode, data);
-            }
+            } 
 
         }
 

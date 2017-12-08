@@ -64,14 +64,14 @@ namespace ecUAQ.Droid
 
 			var stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create (this);
 			stackBuilder.AddParentStack (Java.Lang.Class.FromType (typeof(MainActivity)));
-			stackBuilder.AddNextIntent (notificationIntent);
+			//stackBuilder.AddNextIntent (notificationIntent);
 
 			var notificationPendingIntent =	stackBuilder.GetPendingIntent (0, (int)PendingIntentFlags.UpdateCurrent);
 
 			var builder = new NotificationCompat.Builder (this);
 			builder.SetSmallIcon (Resource.Drawable.logo_proyecto)
 				.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.logo_proyecto))
-				.SetColor (Color.Black)
+                   .SetColor (Color.Transparent)
 				.SetContentTitle (notificationDetails)
 				.SetContentText (GetString (Resource.String.geofence_transition_notification_text))
 				.SetContentIntent (notificationPendingIntent)
