@@ -22,28 +22,22 @@
                         </accessibility>
                         <subviews>
                             <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" userInteractionEnabled="NO" image="splash2.png">
-                                <rect key="frame" x="155" y="348" width="94" height="142"/>
-                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact" image="conColor.png">
                                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3533" fixedFrame="YES" animating="YES">
-                                <rect key="frame" x="142" y="222" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </activityIndicatorView>
                         </subviews>
                         <variation key="heightClass=regular-widthClass=compact">
                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
-                            <mask key="subviews">
-                                <include reference="3533"/>
-                            </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         </variation>
+                        <connections/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -66,5 +60,6 @@
         <image name="calendario.png" width="256" height="256"/>
         <image name="splash.png" width="500" height="768"/>
         <image name="splash2.png" width="500" height="761"/>
+        <image name="conColor.png" width="500" height="760"/>
     </resources>
 </document>
