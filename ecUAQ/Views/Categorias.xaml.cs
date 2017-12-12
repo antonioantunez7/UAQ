@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using ecUAQ.Models;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace ecUAQ.Views
@@ -85,7 +86,7 @@ namespace ecUAQ.Views
                             }
                             else if (auxColumnas / maximoColumnas == 1)
                             {//Si todavia faltan elementos 
-                                //Crear renglon    
+                             //Crear renglon    
                                 gridCategorias.RowDefinitions.Add(new RowDefinition() { Height = 150 });
                                 renglones++;
                                 auxColumnas = 0;
@@ -115,7 +116,7 @@ namespace ecUAQ.Views
                                 //Crear el objeto a insertar
                                 int cveCategoria = categorias.listaCategorias[columnas].cveCategoria;
                                 string descCategoria = categorias.listaCategorias[columnas].descCategoria;
-                                string url_portada = "http://189.211.201.181:86/"+categorias.listaCategorias[columnas].url_portada;
+                                string url_portada = "http://189.211.201.181:86/" + categorias.listaCategorias[columnas].url_portada;
                                 //string url_portada = "https://pbs.twimg.com/profile_images/3673725732/da6f8684f131d039ee285cbf2bc52529.png";
                                 Debug.Write(url_portada);
                                 var imagen = new Image()
@@ -127,9 +128,10 @@ namespace ecUAQ.Views
                                 };
                                 //Se crea el evento del clic de la imagen
                                 var tapGestureRecognizer = new TapGestureRecognizer();
-                                tapGestureRecognizer.Tapped += (s, e) => {
+                                tapGestureRecognizer.Tapped += (s, e) =>
+                                {
                                     //imagen.Opacity = .5;
-                                    eventosCategorias(cveCategoria,descCategoria);
+                                    eventosCategorias(cveCategoria, descCategoria);
                                 };
                                 imagen.GestureRecognizers.Add(tapGestureRecognizer);
                                 gridCategorias.Children.Add(imagen, auxColumnas, renglones);

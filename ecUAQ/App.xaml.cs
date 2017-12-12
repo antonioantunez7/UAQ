@@ -13,8 +13,6 @@ namespace ecUAQ
     {
         public static bool UseMockDataStore = true;
         public static string BackendUrl = "https://localhost:5000";
-        Calendar calendar;
-        CalendarVM _vm;
 
         public App()
         {

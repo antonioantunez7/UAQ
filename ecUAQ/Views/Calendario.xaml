@@ -7,5 +7,20 @@
     Title="Calendario"
     xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar">
     <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Padding="12">
+            <ScrollView VerticalOptions="FillAndExpand">
+                <Label 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                FontAttributes="Bold"
+                FontFamily="Futura-Medium"
+                FontSize="24"
+                Opacity="0.5"
+                Text="Cargando calendario, por favor espere..."
+                ></Label>
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
