@@ -17,6 +17,8 @@
     using Java.Lang;
 using ecUAQ.Models;
 using Android.Gms.Maps.Model;
+using Android.Locations;
+using Xamarin.Forms;
 
 namespace ecUAQ.Droid
     {
@@ -94,6 +96,20 @@ namespace ecUAQ.Droid
 
             public void OnConnected(Bundle connectionHint)
             {
+                LocationManager locationManager = (LocationManager)Forms.Context.GetSystemService(Context.LocationService);
+                if (locationManager.IsProviderEnabled(LocationManager.GpsProvider) == false)
+                {
+                    Android.App.AlertDialog.Builder builder = new Android.App.AlertDialog.Builder(this);
+                    builder.SetTitle("Permitir!");
+                    builder.SetMessage("CulturaUAQ Requiere activar tu ubicación");
+                    builder.SetCancelable(false);
+                    builder.SetPositiveButton("Activar", delegate {
+                        Intent gpsSettingIntent = new Intent(Android.Provider.Settings.ActionLocationSourceSettings);
+                        Forms.Context.StartActivity(gpsSettingIntent);
+                    });
+                    builder.SetNegativeButton("Denegar", delegate { });
+                    builder.Show();
+                }
                 Log.Info(TAG, "Connected to GoogleApiClient");
                 AddGeofencesButtonHandler();
                 Log.Info(TAG, "AddGeofencesButtonHandler");
