@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ecUAQ.Views.ProximosEventos" Title="Eventos">
-    <ListView Opacity="0.8" RowHeight="100"
+    <!--<ListView Opacity="0.8" RowHeight="100"
             x:Name="ListaEventos" ItemSelected="detalle_ItemSelected" ItemsSource="{Binding ListaEventos}" HeightRequest="80">
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -32,5 +32,44 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
+    <ContentPage.Content>
+        <ScrollView x:Name="svEventos">
+            <Label x:Name="etiquetaCargando" 
+                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                FontAttributes="Bold" FontFamily="Futura-Medium"
+                FontSize="20" TextColor="#6B9998">
+            </Label>
+            <StackLayout>
+                <ListView
+                    x:Name="listaEventos" ItemsSource="{Binding listaEventos}" VerticalOptions="FillAndExpand" HasUnevenRows="True" ItemSelected="detalle_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame>
+                                    <StackLayout Orientation="Vertical">
+                                        <StackLayout Orientation="Horizontal">
+                                          <Image Source="{Binding url_portada}" HorizontalOptions="Start" WidthRequest="100"  VerticalOptions="Center" />
+                                          <Label FontSize="14" HorizontalOptions="FillAndExpand" Text="{Binding titulo}" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                          <Label FontSize="10" Text="Fecha del evento: " TextColor="Maroon" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="80" />
+                                          <Label FontSize="10" Text="{Binding fechaInicio}" TextColor="Gray"></Label>
+                                          <Label FontSize="10" Text=" - " TextColor="Gray"></Label>
+                                          <Label FontSize="10" Text="{Binding fechaFin}" TextColor="Gray"></Label>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                          <Label FontSize="10" Text="Lugar del evento: " TextColor="Maroon" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="80" />
+                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding lugarEvento}" TextColor="Gray"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

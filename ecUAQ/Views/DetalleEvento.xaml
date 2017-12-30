@@ -7,7 +7,6 @@
                     x:Name="DetalleDelEvento" ItemsSource="{Binding DetalleDelEvento}" ItemSelected="evento_ItemSelected" VerticalOptions="FillAndExpand" HasUnevenRows="True" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <!--<ImageCell Text="{Binding titulo}" Detail="{Binding descripcion}" ImageSource="{Binding url_portada}"></ImageCell>-->
                             <ViewCell>
                                 <ViewCell.View>
                                 <Grid>
@@ -22,16 +21,38 @@
                                                 </ContentView>
                                             </StackLayout>
                                         </StackLayout>
-                                        
                                         <ScrollView Grid.Row="1">
                                             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                                                <Label Text="{Binding titulo}" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" FontFamily="Futura-Medium" TextColor="#245664"></Label>
-                                                <Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
-                                                <Label Text="{Binding organizador}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
-                                                <Label Text="{Binding lugarEvento}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
-                                                <Label Text="{Binding notas}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
-                                                <Label Text="{Binding fechaInicio}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
-                                                <Label Text="{Binding fechaFin}" FontSize="10" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>
+                                                <Frame>
+                                                    <StackLayout Orientation="Vertical">
+                                                        <Label HorizontalOptions="Center" Text="{Binding titulo}" FontSize="18" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40" FontFamily="Futura-Medium" TextColor="Maroon"/>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="10" Text="Organizador: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150"/>
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding organizador}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="10" Text="Lugar del evento: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding lugarEvento}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="10" Text="Descripción: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding descripcion}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="10" Text="Notas: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding notas}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="10" Text="Fecha inicio: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding fechaInicio}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout Orientation="Horizontal">
+                                                          <Label FontSize="10" Text="Fecha fin: " TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="150" />
+                                                          <Label FontSize="10" HorizontalOptions="FillAndExpand" Text="{Binding fechaFin}" TextColor="Gray"></Label>
+                                                        </StackLayout>
+                                                    </StackLayout>
+                                                </Frame>
+                                                <!--<Label Text="{Binding descripcion}" FontSize="12" HorizontalOptions="Center" FontFamily="Futura-Medium"></Label>-->
                                             </StackLayout>
                                         </ScrollView>
                                 </Grid>

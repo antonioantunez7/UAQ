@@ -57,13 +57,13 @@ namespace ecUAQ.Views
                             {
                                 if (columnas == 0)
                                 {
-                                    gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 170 });
+                                    gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 240 });
                                     auxColumnas = 0;
                                 }
                                 else if (auxColumnas / maximoColumnas == 1)
                                 {//Si todavia faltan elementos 
                                  //Crear renglon    
-                                    gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 170 });
+                                    gridEventos.RowDefinitions.Add(new RowDefinition() { Height = 240 });
                                     renglones++;
                                     auxColumnas = 0;
                                 }
@@ -103,7 +103,7 @@ namespace ecUAQ.Views
                                     label.FontFamily = "Futura-Medium";
                                     label.FontAttributes = FontAttributes.Bold;
                                     label.Text = eventos.vistaEventos[columnas].titulo;
-                                    gridEventos.Children.Add(label, auxColumnas, renglones);
+                                    //gridEventos.Children.Add(label, auxColumnas, renglones);
 
                                     //Crear el objeto a insertar
                                     int idEvento = eventos.vistaEventos[columnas].idEvento;
@@ -113,8 +113,13 @@ namespace ecUAQ.Views
                                     var imagen = new Image()
                                     {
                                         Source = url_portada,
+                                        //WidthRequest = 100,
                                         HeightRequest = 120,
-                                        VerticalOptions = LayoutOptions.Start,
+                                        //VerticalOptions = LayoutOptions.Start,
+
+                                        VerticalOptions = LayoutOptions.Center,
+                                        HorizontalOptions = LayoutOptions.Center,
+
                                         Opacity = 0.8
                                     };
                                     //Se crea el evento del clic de la imagen
@@ -123,7 +128,82 @@ namespace ecUAQ.Views
                                         detalleEvento(eventoX);
                                     };
                                     imagen.GestureRecognizers.Add(tapGestureRecognizer);
-                                    gridEventos.Children.Add(imagen, auxColumnas, renglones);
+                                    //gridEventos.Children.Add(imagen, auxColumnas, renglones);
+
+
+                                    //Diseño nuevo
+                                    var stacklayout1 = new StackLayout
+                                    {
+                                        Orientation = StackOrientation.Horizontal,
+                                        HorizontalOptions = LayoutOptions.Center,
+                                        Children = {
+                                        imagen
+                                    }
+                                    };
+
+                                    var label1 = new Label
+                                    {
+                                        FontSize = 8,
+                                        Text = "Fecha del evento: ",
+                                        TextColor = Color.Black,
+                                        FontAttributes = FontAttributes.Bold,
+                                        HorizontalOptions = LayoutOptions.Start,
+                                        VerticalOptions = LayoutOptions.Center,
+                                        WidthRequest = 100
+                                    };
+
+                                    var label2 = new Label
+                                    {
+                                        FontSize = 8,
+                                        Text = this.fechaSQLaNormal(eventos.vistaEventos[columnas].fechaInicio) + " - "+this.fechaSQLaNormal(eventos.vistaEventos[columnas].fechaFin),
+                                        TextColor = Color.Gray,
+                                        HorizontalOptions = LayoutOptions.FillAndExpand,
+                                    };
+
+                                    var label0 = new Label
+                                    {
+                                        FontSize = 10,
+                                        Text = eventos.vistaEventos[columnas].titulo,
+                                        TextColor = Color.Gray,
+                                        HorizontalOptions = LayoutOptions.Center,
+                                        HorizontalTextAlignment = TextAlignment.Center
+                                    };
+
+                                    var stacklayout2 = new StackLayout
+                                    {
+                                        Orientation = StackOrientation.Horizontal,
+                                        HorizontalOptions = LayoutOptions.Center,
+                                        Children = {
+                                        label0
+                                        }
+                                    };
+
+                                    var stacklayout3 = new StackLayout
+                                    {
+                                        Orientation = StackOrientation.Horizontal,
+                                        Children = {
+                                            label1,
+                                            label2,
+                                        }
+                                    };
+
+
+                                    var stacklayoutPrincipal = new StackLayout()
+                                    {
+                                        Orientation = StackOrientation.Vertical,
+                                        Children = {
+                                            stacklayout1,
+                                            stacklayout2,
+                                            stacklayout3
+                                        }
+                                    };
+                                    var frame = new Frame()
+                                    {
+                                        BackgroundColor = Color.FromHex("FBFBFB")
+                                    };
+                                    frame.Content = stacklayoutPrincipal;
+
+                                    gridEventos.Children.Add(frame, auxColumnas, renglones);
                                 }
                                 auxColumnas++;
                             }

@@ -13,7 +13,7 @@ namespace ecUAQ.Droid
         public const long GEOFENCE_EXPIRATION_IN_HOURS = 12;
         public const long GEOFENCE_EXPIRATION_IN_MILLISECONDS = GEOFENCE_EXPIRATION_IN_HOURS * 60 * 60 * 1000;
         public const float GEOFENCE_RADIUS_IN_METERS = 500;
-        public static readonly Dictionary<string, LatLng> BAY_AREA_LANDMARKS = new Dictionary<string, LatLng> {
+        public static readonly Dictionary<Eventos, LatLng> BAY_AREA_LANDMARKS = new Dictionary<Eventos, LatLng> {
             /*
             { "Casa de Toño", new LatLng(19.2735906,-99.6755938)},
             { "World Trade Center", new LatLng (19.393664, -99.1745978) },

@@ -238,7 +238,20 @@ namespace ecUAQ.Droid
                             //Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(System.Double.Parse(evento.latitud), System.Double.Parse(evento.longitud)));
                             double latitud = System.Double.Parse(evento.latitud);
                             double longitud = System.Double.Parse(evento.longitud);
-                            Constants.BAY_AREA_LANDMARKS.Add(evento.titulo, new LatLng(latitud, longitud));
+                        //Usuarios usuario = new Usuarios { idUsuario = 1, nombre = "Antonio", paterno = "Antunez", materno = "Barbosa" };
+                            string url_portada = "http://189.211.201.181:86/" + evento.url_portada;
+                            Eventos eventoX = new Eventos{
+                            idEvento =evento.idEvento,
+                            titulo = evento.titulo,
+                                descripcion = evento.descripcion,
+                                organizador = evento.organizador,
+                                lugarEvento = evento.lugarEvento,
+                                notas = evento.notas,
+                                fechaInicio = this.fechaSQLaNormal(evento.fechaInicio),
+                                fechaFin = this.fechaSQLaNormal(evento.fechaFin),
+                                url_portada = url_portada
+                            };
+                            Constants.BAY_AREA_LANDMARKS.Add(eventoX, new LatLng(latitud, longitud));
                         }
                     }
                 }
@@ -265,6 +278,13 @@ namespace ecUAQ.Droid
             {
                 base.OnActivityResult(requestCode, resultCode, data);
             } 
+
+            public string fechaSQLaNormal(string fecha)
+            {
+                string[] fechaHoralNormal = fecha.Split('T');
+                string[] fechaNormal = fechaHoralNormal[0].Split('-');
+                return fechaNormal[2] + "/" + fechaNormal[1] + "/" + fechaNormal[0];
+            }
 
         }
 

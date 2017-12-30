@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using ecUAQ.Models;
@@ -14,7 +15,8 @@ namespace ecUAQ.Views
             InitializeComponent();
             cargaProximosEventos();
         }*/
-        List<Eventos> leventos;
+        //List<Eventos> leventos;
+        public ObservableCollection<Eventos> leventos { get; set; }
         public ProximosEventos(int cveCategoria, string descCategoria)
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace ecUAQ.Views
             cargaEventos(cveCategoria, descCategoria);
         }
 
-        void cargaEventos(int cveCategoria, string descCategoria)
+        /*void cargaEventos(int cveCategoria, string descCategoria)
         {
             leventos = new List<Eventos>();
             leventos.Add(new Eventos
@@ -69,6 +71,54 @@ namespace ecUAQ.Views
                 } else{
                 }
             });
+        }*/
+
+        async void cargaEventos(int cveCategoria, string descCategoria)
+        {
+            etiquetaCargando.Text = "Cargando eventos, por favor espere...";
+            svEventos.Content = etiquetaCargando;
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                RestClient cliente = new RestClient();
+
+                var eventosResp = await cliente.Get2<ListaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos/categoria/" + cveCategoria);
+                if (eventosResp != null)
+                {
+                    if (eventosResp.listaEventos.Count > 0)
+                    {
+                        leventos = new ObservableCollection<Eventos>();
+                        foreach (var evento in eventosResp.listaEventos)
+                        {
+                            string url_portada = "http://189.211.201.181:86/" + evento.url_portada;
+                            leventos.Add(new Eventos
+                            {
+                                idEvento = evento.idEvento,
+                                titulo = evento.titulo,
+                                descripcion = evento.descripcion,
+                                organizador = evento.organizador,
+                                lugarEvento = evento.lugarEvento,
+                                notas = evento.notas,
+                                fechaInicio = this.fechaSQLaNormal(evento.fechaInicio),
+                                fechaFin = this.fechaSQLaNormal(evento.fechaFin),
+                                url_portada = url_portada
+                            });
+                        }
+                        listaEventos.ItemsSource = leventos;
+                        svEventos.Content = listaEventos;
+                    }
+                    else
+                    {
+                        etiquetaCargando.Text = "No se encontraron eventos.";
+                        svEventos.Content = etiquetaCargando;
+                    }
+                }
+                else
+                {
+                    etiquetaCargando.Text = "Error de conexión.";
+                    svEventos.Content = etiquetaCargando;
+                }
+            });
         }
 
         public string fechaSQLaNormal(string fecha){
@@ -77,7 +127,7 @@ namespace ecUAQ.Views
             return fechaNormal[2]+"/"+fechaNormal[1]+"/"+fechaNormal[0];     
         }
 
-        void cargaProximosEventos()
+        /*void cargaProximosEventos()
         {
             List<Eventos> eventos = new List<Eventos>{
                 new Eventos { idEvento = 1, titulo = "TORNEO DE PITARRA", 
@@ -100,7 +150,7 @@ namespace ecUAQ.Views
 
 
             ListaEventos.ItemsSource = eventos;
-        }
+        }*/
 
         public async void detalle_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         {
@@ -108,7 +158,7 @@ namespace ecUAQ.Views
             if (evento != null)
             {
                 await Navigation.PushAsync(new DetalleEvento(evento));
-                ListaEventos.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
+                listaEventos.SelectedItem = null;//Para que automaticamente se deseleccione el elemento
             }   
         }
     }

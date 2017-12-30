@@ -111,7 +111,7 @@ namespace ecUAQ.Views
                                 label.FontFamily = "Futura-Medium";
                                 label.FontAttributes = FontAttributes.Bold;
                                 label.Text = categorias.listaCategorias[columnas].descCategoria;
-                                gridCategorias.Children.Add(label, auxColumnas, renglones);
+                                //gridCategorias.Children.Add(label, auxColumnas, renglones);
 
                                 //Crear el objeto a insertar
                                 int cveCategoria = categorias.listaCategorias[columnas].cveCategoria;
@@ -122,8 +122,10 @@ namespace ecUAQ.Views
                                 var imagen = new Image()
                                 {
                                     Source = url_portada,
-                                    HeightRequest = 120,
-                                    VerticalOptions = LayoutOptions.Start,
+                                    WidthRequest = 100,
+                                    //HeightRequest = 120,
+                                    VerticalOptions = LayoutOptions.Center,
+                                    HorizontalOptions = LayoutOptions.Center,
                                     Opacity = 0.8
                                 };
                                 //Se crea el evento del clic de la imagen
@@ -134,7 +136,73 @@ namespace ecUAQ.Views
                                     eventosCategorias(cveCategoria, descCategoria);
                                 };
                                 imagen.GestureRecognizers.Add(tapGestureRecognizer);
-                                gridCategorias.Children.Add(imagen, auxColumnas, renglones);
+                                //gridCategorias.Children.Add(imagen, auxColumnas, renglones);
+
+                                //Diseño nuevo
+                                var stacklayout1 = new StackLayout {
+                                    Orientation = StackOrientation.Horizontal,
+                                    HorizontalOptions = LayoutOptions.Center,
+                                    Children = {
+                                        imagen
+                                    }
+                                };
+
+                                var label1 = new Label
+                                {
+                                    FontSize = 10,
+                                    Text = "Label 1",
+                                    TextColor = Color.Black,
+                                    FontAttributes = FontAttributes.Bold,
+                                    HorizontalOptions = LayoutOptions.Start,
+                                    VerticalOptions = LayoutOptions.Center,
+                                    WidthRequest = 150
+                                };
+
+                                var label2 = new Label
+                                {
+                                    FontSize = 10,
+                                    Text = "Label 2",
+                                    TextColor = Color.Gray,
+                                    HorizontalOptions = LayoutOptions.FillAndExpand,
+                                };
+
+                                var label3 = new Label
+                                {
+                                    FontSize = 12,
+                                    Text = categorias.listaCategorias[columnas].descCategoria,
+                                    TextColor = Color.Gray,
+                                    HorizontalOptions = LayoutOptions.Center,
+                                    HorizontalTextAlignment = TextAlignment.Center
+                                };
+
+                                var stacklayout2 = new StackLayout
+                                {
+                                    Orientation = StackOrientation.Horizontal,
+                                    HorizontalOptions = LayoutOptions.Center,
+                                    Children = {
+                                        //label1,
+                                        //label2,
+                                        label3
+                                    }
+                                };
+
+
+                                var stacklayoutPrincipal = new StackLayout()
+                                {
+                                    Orientation = StackOrientation.Vertical,
+                                    Children = {
+                                        stacklayout1,
+                                        stacklayout2
+                                    }
+                                };
+                                var frame = new Frame()
+                                {
+                                    BackgroundColor = Color.FromHex("FBFBFB")
+                                };
+                                frame.Content = stacklayoutPrincipal;
+
+                                gridCategorias.Children.Add(frame, auxColumnas, renglones);
+
                             }
                             auxColumnas++;
                         }
