@@ -11,7 +11,7 @@
 			<Color x:Key="LightTextColor">#999999</Color>
 			<Style TargetType="NavigationPage">
 				<Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
-				<Setter Property="BarTextColor" Value="White" />
+				<Setter Property="BarTextColor" Value="Gray" />
 			</Style>
             <!--<Style TargetType="Frame">
                 <Setter Property="CornerRadius" Value="10" />

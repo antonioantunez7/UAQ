@@ -66,8 +66,6 @@
       <DependentUpon>Calendario.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\CalendarVM.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\DoubleExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\PinchToZoomContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
