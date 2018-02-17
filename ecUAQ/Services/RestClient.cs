@@ -74,5 +74,38 @@ namespace ecUAQ
             return default(T);
         }
 
+        public async Task<T> GetEventoId<T>(string url)
+        {
+            try
+            {
+                HttpClient cliente = new HttpClient();
+                var respuesta = await cliente.GetAsync(url);
+                if (respuesta.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var jsonRespuesta = await respuesta.Content.ReadAsStringAsync();
+                    if (jsonRespuesta.Contains("idEvento"))
+                    {
+                        return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonRespuesta);
+                    }
+                    else
+                    {
+                        var jsonArmado = "{'idEvento':'0'}";
+                        return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
+                    }
+                }
+                else
+                {
+                    var jsonArmado = "{'idEvento':'0'}";
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonArmado);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("\nOcurrio un error en la funcion Get del Task");
+                Debug.WriteLine(ex);
+            }
+            return default(T);
+        }
+
     }
 }
