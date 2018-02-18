@@ -116,6 +116,18 @@
     <Reference Include="Xamarin.Forms.Xaml">
       <HintPath>..\packages\Xamarin.Forms.2.5.0.91635\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Geofencing.Abstractions">
+      <HintPath>..\packages\Plugin.Geofencing.2.0.0\lib\Xamarin.iOS10\Plugin.Geofencing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Geofencing">
+      <HintPath>..\packages\Plugin.Geofencing.2.0.0\lib\Xamarin.iOS10\Plugin.Geofencing.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Notifications.Abstractions">
+      <HintPath>..\packages\Plugin.Notifications.4.0.2\lib\Xamarin.iOS10\Plugin.Notifications.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Notifications">
+      <HintPath>..\packages\Plugin.Notifications.4.0.2\lib\Xamarin.iOS10\Plugin.Notifications.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
