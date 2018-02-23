@@ -1,16 +1,19 @@
 {
   "images": [
     {
+      "filename": "Icon-Spotlight-40.png",
       "size": "20x20",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
+      "filename": "Icon-60.png",
       "size": "20x20",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
+      "filename": "Icon-Small@2x.png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "iphone"
@@ -21,66 +24,79 @@
       "idiom": "iphone"
     },
     {
+      "filename": "Icon-Spotlight-40@2x.png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
+      "filename": "Icon-Spotlight-40@3x.png",
       "size": "40x40",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
+      "filename": "Icon-Spotlight-40@3x.png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "iphone"
     },
     {
+      "filename": "Icon-60@3x.png",
       "size": "60x60",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
+      "filename": "Icon-App-20x20@1x.png",
       "size": "20x20",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-Spotlight-40.png",
       "size": "20x20",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-Small.png",
       "size": "29x29",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-Small@2x.png",
       "size": "29x29",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-Spotlight-40.png",
       "size": "40x40",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-Spotlight-40@2x.png",
       "size": "40x40",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-iPadPro@2x.png",
       "size": "83.5x83.5",
       "scale": "2x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-76.png",
       "size": "76x76",
       "scale": "1x",
       "idiom": "ipad"
     },
     {
+      "filename": "Icon-76@2x.png",
       "size": "76x76",
       "scale": "2x",
       "idiom": "ipad"
@@ -118,6 +134,7 @@
     },
     {
       "role": "appLauncher",
+      "filename": "Icon-Spotlight-40@2x.png",
       "size": "40x40",
       "subtype": "38mm",
       "scale": "2x",
@@ -150,6 +167,7 @@
       "idiom": "mac"
     },
     {
+      "filename": "proximos.png",
       "size": "16x16",
       "scale": "2x",
       "idiom": "mac"
@@ -175,6 +193,7 @@
       "idiom": "mac"
     },
     {
+      "filename": "calendario.png",
       "size": "256x256",
       "scale": "1x",
       "idiom": "mac"
