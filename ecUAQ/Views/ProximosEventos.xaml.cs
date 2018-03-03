@@ -36,14 +36,14 @@ namespace ecUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var eventos = await cliente.Get2<ListaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos/categoria/" + cveCategoria);
+                var eventos = await cliente.Get2<ListaEventos>("http://148.240.202.160:86/CulturaUAQWebservice/api/tbleventos/categoria/" + cveCategoria);
                 if (eventos != null) {
                     if (eventos.listaEventos.Count > 0)
                     {
                         leventos = new List<Eventos>();
                         foreach (var evento in eventos.listaEventos)
                         {
-                            string url_portada = "http://189.211.201.181:86/" + evento.url_portada;
+                            string url_portada = "http://148.240.202.160:86/" + evento.url_portada;
                             leventos.Add(new Eventos
                             {
                                 idEvento = evento.idEvento,
@@ -82,7 +82,7 @@ namespace ecUAQ.Views
             {
                 RestClient cliente = new RestClient();
 
-                var eventosResp = await cliente.Get2<ListaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos/categoria/" + cveCategoria);
+                var eventosResp = await cliente.Get2<ListaEventos>("http://148.240.202.160:86/CulturaUAQWebservice/api/tbleventos/categoria/" + cveCategoria);
                 if (eventosResp != null)
                 {
                     if (eventosResp.listaEventos.Count > 0)
@@ -90,7 +90,7 @@ namespace ecUAQ.Views
                         leventos = new ObservableCollection<Eventos>();
                         foreach (var evento in eventosResp.listaEventos)
                         {
-                            string url_portada = "http://189.211.201.181:86/" + evento.url_portada;
+                            string url_portada = "http://148.240.202.160:86/" + evento.url_portada;
                             leventos.Add(new Eventos
                             {
                                 idEvento = evento.idEvento,

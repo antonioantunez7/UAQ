@@ -92,8 +92,8 @@ namespace ecUAQ.Views
             {
                 RestClient cliente = new RestClient();
                 Debug.Write("Voy hacer la petincion");
-                //var eventos = await cliente.Get<Eventos>("http://189.211.201.181:75/GazzetaWebservice2/api/tblgaleria");
-                var eventos = await cliente.Get<ListaGale>("http://189.211.201.181:75/GazzetaWebservice2/api/tblgaleria");
+                //var eventos = await cliente.Get<Eventos>("http://148.240.202.160:75/GazzetaWebservice2/api/tblgaleria");
+                var eventos = await cliente.Get<ListaGale>("http://148.240.202.160:75/GazzetaWebservice2/api/tblgaleria");
                 Debug.Write(eventos);
                 foreach(var algo in eventos.listaGaleria){
                     Debug.Write(algo.url_imagen);

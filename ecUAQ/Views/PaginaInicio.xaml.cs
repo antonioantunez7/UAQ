@@ -35,10 +35,10 @@ namespace ecUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                //var categorias = await cliente.Get<ListaCategorias>("http://189.211.201.181:75/GazzetaWebservice2/api/tblcategorias");
+                //var categorias = await cliente.Get<ListaCategorias>("http://148.240.202.160:75/GazzetaWebservice2/api/tblcategorias");
                 if (fecha != "")
                 {
-                    var eventos = await cliente.Get3<VistaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos/fecha/" + fecha);
+                    var eventos = await cliente.Get3<VistaEventos>("http://148.240.202.160:86/CulturaUAQWebservice/api/tbleventos/fecha/" + fecha);
                     Debug.Write(eventos);
                     if (eventos != null)
                     {
@@ -74,7 +74,7 @@ namespace ecUAQ.Views
                                 else
                                 {
                                     /*Se crea el objeto de tipo evento*/
-                                    string url_portadaE = "http://189.211.201.181:86/" + eventos.vistaEventos[columnas].url_portada;
+                                    string url_portadaE = "http://148.240.202.160:86/" + eventos.vistaEventos[columnas].url_portada;
                                     Eventos eventoX = new Eventos
                                     {
                                         idEvento = eventos.vistaEventos[columnas].idEvento,
@@ -108,7 +108,7 @@ namespace ecUAQ.Views
                                     //Crear el objeto a insertar
                                     int idEvento = eventos.vistaEventos[columnas].idEvento;
                                     string titulo = eventos.vistaEventos[columnas].titulo;
-                                    string url_portada = "http://189.211.201.181:86/" + eventos.vistaEventos[columnas].url_portada;
+                                    string url_portada = "http://148.240.202.160:86/" + eventos.vistaEventos[columnas].url_portada;
                                     Debug.Write(url_portada);
                                     var imagen = new Image()
                                     {
@@ -213,7 +213,7 @@ namespace ecUAQ.Views
                 }
                 else
                 {
-                    var eventos = await cliente.Get3<VistaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos");
+                    var eventos = await cliente.Get3<VistaEventos>("http://148.240.202.160:86/CulturaUAQWebservice/api/tbleventos");
                     Debug.Write(eventos);
                     if (eventos != null)
                     {
@@ -249,7 +249,7 @@ namespace ecUAQ.Views
                                 else
                                 {
                                     /*Se crea el objeto de tipo evento*/
-                                    string url_portadaE = "http://189.211.201.181:86/" + eventos.vistaEventos[columnas].url_portada;
+                                    string url_portadaE = "http://148.240.202.160:86/" + eventos.vistaEventos[columnas].url_portada;
                                     Eventos eventoX = new Eventos
                                     {
                                         idEvento = eventos.vistaEventos[columnas].idEvento,
@@ -283,7 +283,7 @@ namespace ecUAQ.Views
                                     //Crear el objeto a insertar
                                     int idEvento = eventos.vistaEventos[columnas].idEvento;
                                     string titulo = eventos.vistaEventos[columnas].titulo;
-                                    string url_portada = "http://189.211.201.181:86/" + eventos.vistaEventos[columnas].url_portada;
+                                    string url_portada = "http://148.240.202.160:86/" + eventos.vistaEventos[columnas].url_portada;
                                     Debug.Write(url_portada);
                                     var imagen = new Image()
                                     {

@@ -19,7 +19,7 @@ namespace ecUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                var eventos = await cliente.Get2<ListaEventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos");
+                var eventos = await cliente.Get2<ListaEventos>("http://148.240.202.160:86/CulturaUAQWebservice/api/tbleventos");
 
                 foreach (Eventos ev in eventos.listaEventos)
                 {

@@ -45,8 +45,8 @@ namespace ecUAQ.Views
             Device.BeginInvokeOnMainThread(async () =>
             {
                 RestClient cliente = new RestClient();
-                //var categorias = await cliente.Get<ListaCategorias>("http://189.211.201.181:75/GazzetaWebservice2/api/tblcategorias");
-                var categorias = await cliente.Get<ListaCategorias>("http://189.211.201.181:86/CulturaUAQWebservice/api/tblcategorias");
+                //var categorias = await cliente.Get<ListaCategorias>("http://148.240.202.160:75/GazzetaWebservice2/api/tblcategorias");
+                var categorias = await cliente.Get<ListaCategorias>("http://148.240.202.160:86/CulturaUAQWebservice/api/tblcategorias");
                 //var categorias = await cliente.Get<ListaCategorias>("https://images.vexels.com/media/users/3/141217/isolated/lists/a2503907aa82c79fc1e8a82f58d722ed-tel-fono-inteligente-icono-ronda.png");
                 Debug.Write(categorias);
                 if (categorias != null)
@@ -116,7 +116,7 @@ namespace ecUAQ.Views
                                 //Crear el objeto a insertar
                                 int cveCategoria = categorias.listaCategorias[columnas].cveCategoria;
                                 string descCategoria = categorias.listaCategorias[columnas].descCategoria;
-                                string url_portada = "http://189.211.201.181:86/" + categorias.listaCategorias[columnas].url_portada;
+                                string url_portada = "http://148.240.202.160:86/" + categorias.listaCategorias[columnas].url_portada;
                                 //string url_portada = "https://pbs.twimg.com/profile_images/3673725732/da6f8684f131d039ee285cbf2bc52529.png";
                                 Debug.Write(url_portada);
                                 var imagen = new Image()

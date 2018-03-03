@@ -21,13 +21,13 @@ namespace ecUAQ.Views
             {
                 RestClient cliente = new RestClient();
 
-                var evento = await cliente.GetEventoId<Eventos>("http://189.211.201.181:86/CulturaUAQWebservice/api/tbleventos/" + idEvento);
+                var evento = await cliente.GetEventoId<Eventos>("http://148.240.202.160:86/CulturaUAQWebservice/api/tbleventos/" + idEvento);
                 if (evento != null)
                 {
                     if (evento.idEvento > 0)
                     {
                         
-                        string url_portada = "http://189.211.201.181:86/" + evento.url_portada;
+                        string url_portada = "http://148.240.202.160:86/" + evento.url_portada;
                         List<Eventos> eventos = new List<Eventos>{
                             new Eventos { titulo = evento.titulo,
                                 descripcion = evento.descripcion,
